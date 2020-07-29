@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="LOG_LEVEL" value="INFO"/>
+	<property name="DEBUG_SRV" value="Console"/>
+
+	<appender name="${DEBUG_SRV}" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} {%thread} %-5level  %logger{50} %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<root level="${LOG_LEVEL}">
+        <!--<appender-ref ref="${LOG_SRV}" />-->
+        <appender-ref ref="${DEBUG_SRV}" />
+    </root>
+
+
+</configuration>
