@@ -13,12 +13,12 @@ import java.util.Map;
 /**
  * @author xuyexin
  * @version V1.0
- * @Title: KafkaWorldCount
+ * @Title: KafkaWordCount
  * @Package com.xyx.chaos.flink.kafka
  * @Description:
  * @date 20/7/30 下午5:26
  */
-public class KafkaWorldCount {
+public class KafkaWordCount {
 
 	public static void main(String[] args) throws Exception {
 		//Kafka配置初始化

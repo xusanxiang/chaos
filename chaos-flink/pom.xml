@@ -74,6 +74,12 @@
             <artifactId>flink-connector-kafka-0.9_${scala.binary.version}</artifactId>
             <version>1.9.0</version>
         </dependency>
+
+        <!--kafka-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_${scala.binary.version}</artifactId>
+        </dependency>
     </dependencies>
 
 
