@@ -1,10 +1,12 @@
-package com.xyx.chaos.flink;
+package com.xyx.chaos.flink.sql;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
 import org.apache.flink.table.api.Table;
-import org.apache.flink.table.api.java.BatchTableEnvironment;
+import org.apache.flink.table.api.bridge.java.BatchTableEnvironment;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author xuyexin
@@ -15,16 +17,18 @@ import org.apache.flink.table.api.java.BatchTableEnvironment;
  * @date 20/7/29 下午6:46
  */
 public class PointCountFlinkSQL {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(PointCountFlinkSQL.class);
+
 	public static void main(String[] args) throws Exception {
 
 		//获取上下文环境 table的环境
 		ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-		BatchTableEnvironment tableEnv = BatchTableEnvironment.getTableEnvironment(env);
+		BatchTableEnvironment tableEnv = BatchTableEnvironment.create(env);
 
 		//读取score.csv
 		DataSet<String> input = env.readTextFile("/Users/xuyexin/Desktop/score.csv");
-		input.print();
-
+		LOGGER.info(input.collect().toString());
 		DataSet<PlayerData> topInput = input.map(new MapFunction<String, PlayerData>() {
 			@Override
 			public PlayerData map(String s) throws Exception {
@@ -54,7 +58,7 @@ public class PointCountFlinkSQL {
 
 		//结果进行打印
 		DataSet<Result> result = tableEnv.toDataSet(queryResult, Result.class);
-		result.print();
+		LOGGER.info(result.collect().toString());
 
 	}
 
