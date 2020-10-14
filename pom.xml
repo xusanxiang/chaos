@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <slf4j.api>1.7.7</slf4j.api>
         <logback.version>1.2.3</logback.version>
         <flink.version>1.11.0</flink.version>
