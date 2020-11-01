@@ -11,16 +11,22 @@ import java.util.PriorityQueue;
  * @version V1.0
  * @Title: MaxTopN
  * @Package com.xyx.chaos.algorithm.heap
- * @Description:
+ * @Description: 给定数组，输出第N个最大值
  * @date 20/6/30 上午11:19
  */
 public class MaxTopN {
 
-	private static final Logger logger = LoggerFactory.getLogger(MaxTopN.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(MaxTopN.class);
 
+	/**
+	 * 给定一个数组，获取其TopK的值
+	 * @param nums
+	 * @param k
+	 * @return Top K
+	 */
 	public static int getTopN(int[] nums, int k){
 
-		//通过优先队列实现不完全大根堆，保障根结点为最大值
+		//通过优先队列实现不完全大根堆，保障根结点为最大值·
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {

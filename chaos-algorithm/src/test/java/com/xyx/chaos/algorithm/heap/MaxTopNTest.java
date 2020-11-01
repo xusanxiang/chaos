@@ -12,26 +12,26 @@ import org.slf4j.LoggerFactory;
  * @version V1.0
  * @Title: MaxTopNTest
  * @Package com.xyx.chaos.algorithm.heap
- * @Description:
+ * @Description: com.xyx.chaos.algorithm.heap.MaxTopN 功能测试
  * @date 20/7/3 下午4:33
  */
 public class MaxTopNTest {
 
-	private static final Logger logger = LoggerFactory.getLogger(MaxTopNTest.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(MaxTopNTest.class);
 
 	private int[] nums;
 
 	public MaxTopNTest(){
 		this.nums = NumArrayUtil.getIntArrays(20);
-		logger.info("Origin num:" + NumArrayUtil.printArray(nums));
+        LOGGER.info("Origin num:" + NumArrayUtil.printArray(nums));
 	}
 
 	@Test
 	public void testMaxTopN(){
-		int n = MaxTopN.getTopN(nums, 5);
+		int n = MaxTopN.getTopN(nums, 2);
 		BaseSort sort = new BubbleSort();
-		logger.info("Sorted num:" + NumArrayUtil.printArray(sort.sort(nums)));
-		logger.info("Top 2 Max num:" +n);
+        LOGGER.info("Sorted num:" + NumArrayUtil.printArray(sort.sort(nums)));
+        LOGGER.info("Top 2 Max num:" +n);
 	}
 
 }
