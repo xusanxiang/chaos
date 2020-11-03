@@ -1,4 +1,4 @@
-package com.xyx.chaos.algorithm;
+package com.xyx.chaos.algorithm.random;
 
 import com.xyx.chaos.algorithm.util.NumArrayUtil;
 import org.junit.Test;
