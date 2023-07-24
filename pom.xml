@@ -18,7 +18,7 @@
     <properties>
         <junit.version>4.12</junit.version>
         <slf4j.api>1.7.7</slf4j.api>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.9</logback.version>
         <flink.version>1.11.0</flink.version>
         <scala.binary.version>2.11</scala.binary.version>
     </properties>
